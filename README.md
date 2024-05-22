@@ -5,8 +5,8 @@
 - [x] Make it deploy
 - [x] Scaffold basic ui with mock data
 - [x] Actually set up a database
-- [ ] Attach database to UI
-- [ ] Add authentication
+- [x] Attach database to UI
+- [x] Add authentication
 - [ ] Add image upload
 - [ ] Routimg/image page (parallel route)
 - [ ] Delete button (w/ Server Actions)
