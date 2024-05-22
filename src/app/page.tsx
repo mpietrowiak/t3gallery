@@ -1,5 +1,8 @@
+import { headers } from "next/headers";
 import Link from "next/link";
 import { db } from "~/server/db";
+
+export const dynamic = "force-dynamic";
 
 const mockUrls = [
   "https://utfs.io/f/bcd14c8f-f70a-4659-b4fa-d4cd656eafed-jlxq4b.jpg",
@@ -14,9 +17,10 @@ const mockImages = mockUrls.map((url, index) => ({
 }));
 
 export default async function HomePage() {
+  headers();
   const posts = await db.query.posts.findMany();
 
-  console.log(posts);
+  // console.log(posts);
 
   return (
     <main className="flex flex-wrap gap-4">
