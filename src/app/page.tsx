@@ -1,10 +1,10 @@
+import { SignedIn, SignedOut } from "@clerk/nextjs";
 import { headers } from "next/headers";
 import { db } from "~/server/db";
 
 export const dynamic = "force-dynamic";
 
-export default async function HomePage() {
-  headers();
+async function Images() {
   const images = await db.query.images.findMany({
     orderBy: (model, { desc }) => desc(model.id),
   });
@@ -16,6 +16,21 @@ export default async function HomePage() {
           <p>{image.name}</p>
         </div>
       ))}
+    </main>
+  );
+}
+
+export default function HomePage() {
+  return (
+    <main className="">
+      <SignedOut>
+        <div className="h-full w-full text-center text-2xl">
+          Please sign in above
+        </div>
+      </SignedOut>
+      <SignedIn>
+        <Images />
+      </SignedIn>
     </main>
   );
 }
