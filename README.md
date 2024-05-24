@@ -7,7 +7,7 @@
 - [x] Actually set up a database
 - [x] Attach database to UI
 - [x] Add authentication
-- [ ] Add image upload
+- [x] Add image upload
 - [ ] Routimg/image page (parallel route)
 - [ ] Delete button (w/ Server Actions)
 - [ ] Analytics (posthog)
