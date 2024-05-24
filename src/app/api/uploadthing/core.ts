@@ -7,7 +7,7 @@ import { images } from "~/server/db/schema";
 const f = createUploadthing();
 
 export const ourFileRouter = {
-  imageUploader: f({ image: { maxFileSize: "4MB" } })
+  imageUploader: f({ image: { maxFileSize: "4MB" , maxFileCount: 4 } })
     .middleware(async ({ req }) => {
       const user = auth();
       if (!user.userId) throw new UploadThingError("Unauthorized");
