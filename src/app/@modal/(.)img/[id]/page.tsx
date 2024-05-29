@@ -1,4 +1,4 @@
-import FullPageImageView from "~/components/full-image-page";
+import FullPageImageView from "~/components/full-page-image-view";
 import { Modal } from "./modal";
 
 export default async function PhotoModal({
