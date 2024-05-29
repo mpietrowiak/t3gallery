@@ -8,25 +8,27 @@ export default async function FullPageImageView(props: { id: number }) {
   const uploaderInfo = await clerkClient.users.getUser(image.userId);
 
   return (
-    <div className="flex h-full w-full min-w-0">
-      <div className="flex flex-shrink items-center justify-center">
-        <img src={image.url} className="w-96 object-contain" />
+    <div className="grid h-full grid-cols-[1fr_minmax(350px,350px)]">
+      <div className="flex grow items-center justify-center">
+        <img src={image.url} className="object-contain" />
       </div>
 
-      <div className="flex w-48 flex-col border-l">
-        <h1 className="border-b p-2 text-center text-xl">{image.name}</h1>
+      <div className="border-l bg-zinc-900/90">
+        <h1 className="border-b p-4 text-center text-xl font-bold">
+          {image.name}
+        </h1>
 
-        <div className="p-2">
+        <div className="p-4">
           <span>Uploaded by:</span>
           <span>{uploaderInfo.username}</span>
         </div>
 
-        <div className="p-2">
+        <div className="p-4">
           <span>Created On:</span>
           <span>{new Date(image.createdAt).toLocaleDateString()}</span>
         </div>
 
-        <div className="p-2">
+        <div className="p-4">
           <form
             action={async () => {
               "use server";
